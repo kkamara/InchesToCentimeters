@@ -29,6 +29,13 @@ class MainActivity : AppCompatActivity() {
         convertButton = findViewById(R.id.button_convert)
         textViewCentimeters = findViewById(R.id.textViewConvert)
 
-//        convertButton.setOnClickListener {}
+        convertButton.setOnClickListener {
+            if (enterInches.text.toString().isNotEmpty()) {
+                val result = enterInches.text.toString().toDouble() * inchValue
+                textViewCentimeters.text = result.toString()
+            } else {
+                textViewCentimeters.text = getString(R.string.text)
+            }
+        }
     }
 }
